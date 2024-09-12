@@ -15,13 +15,6 @@ import {
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-interface Dataset {
-  label: string;
-  data: number[];
-  borderColor: string;
-  backgroundColor: string;
-}
-
 interface EngagementChartProps {
   data: ChartData<"line">;
 }
