@@ -23,7 +23,7 @@ interface Dataset {
 }
 
 interface EngagementChartProps {
-  data: ChartData<"line", number[], string>;
+  data: ChartData<"line">;
 }
 
 const EngagementChart: React.FC<EngagementChartProps> = ({ data }) => {
