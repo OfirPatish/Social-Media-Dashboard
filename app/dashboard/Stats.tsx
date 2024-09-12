@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { UserIcon, HeartIcon, ChatBubbleLeftEllipsisIcon, PhotoIcon } from "@heroicons/react/24/solid";
+import { UserIcon, HeartIcon, PhotoIcon } from "@heroicons/react/24/solid";
 import Modal from "../shared/Modal";
 
 interface StatsProps {

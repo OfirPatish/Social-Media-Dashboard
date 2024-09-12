@@ -9,16 +9,25 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartData,
+  ChartOptions,
 } from "chart.js";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
+interface Dataset {
+  label: string;
+  data: number[];
+  borderColor: string;
+  backgroundColor: string;
+}
+
 interface EngagementChartProps {
-  data: any;
+  data: ChartData<"line", number[], string>;
 }
 
 const EngagementChart: React.FC<EngagementChartProps> = ({ data }) => {
-  const options = {
+  const options: ChartOptions<"line"> = {
     responsive: true,
     plugins: {
       legend: {
