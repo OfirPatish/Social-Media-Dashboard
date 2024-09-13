@@ -2,6 +2,10 @@
 
 This is a Next.js project that implements a social media dashboard with features like user profile summary, engagement statistics, recent posts, and notifications.
 
+## Live Demo
+
+Check out the live demo of the project at: [https://social.ofirpatish.com/](https://social.ofirpatish.com/)
+
 ## Project Structure
 
 ```
