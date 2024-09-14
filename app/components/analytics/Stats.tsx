@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { UserIcon, HeartIcon, PhotoIcon } from "@heroicons/react/24/solid";
-import Modal from "../shared/Modal";
+import Modal from "../common/Modal";
 
 interface StatsProps {
   followers: number;

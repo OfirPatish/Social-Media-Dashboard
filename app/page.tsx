@@ -2,15 +2,17 @@
 
 import React from "react";
 import { useQuery } from "react-query";
-import Layout from "./shared/Layout";
-import Stats from "./dashboard/Stats";
-import EngagementChart from "./dashboard/EngagementChart";
-import RecentPosts from "./dashboard/RecentPosts";
-import Loader from "./shared/Loader";
-import { userStats, recentPosts, engagementData } from "./utils/mockData";
-import UserProfileSummary from "./dashboard/UserProfileSummary";
-import NotificationsPanel from "./dashboard/NotificationsPanel";
-import { userProfile, notifications } from "./utils/mockData";
+import Layout from "./components/common/Layout";
+import Stats from "./components/analytics/Stats";
+import EngagementChart from "./components/analytics/EngagementChart";
+import RecentPosts from "./components/posts/RecentPosts";
+import Loader from "./components/common/Loader";
+import { userStats, recentPosts, engagementData } from "./components/utils/mockData";
+import UserProfileSummary from "./components/profile/UserProfileSummary";
+import NotificationsPanel from "./components/notifications/NotificationsPanel";
+import { userProfile, notifications } from "./components/utils/mockData";
+import CreatePost from "./components/posts/CreatePost";
+import { useQueryClient } from "react-query";
 
 const fetchDashboardData = async () => {
   // Simulate API call
@@ -20,6 +22,7 @@ const fetchDashboardData = async () => {
 
 export default function Home() {
   const { data, isLoading, error } = useQuery("dashboardData", fetchDashboardData);
+  const queryClient = useQueryClient();
 
   if (isLoading) return <Loader />;
   if (error) return <div>An error occurred</div>;
@@ -33,6 +36,9 @@ export default function Home() {
             <UserProfileSummary {...userProfile} />
             <div className="mt-6">
               <Stats {...data.userStats} />
+            </div>
+            <div className="mt-6">
+              <CreatePost onPostCreated={() => queryClient.invalidateQueries("dashboardData")} />
             </div>
           </div>
           <NotificationsPanel notifications={notifications} />

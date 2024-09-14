@@ -1,4 +1,4 @@
-import { Providers } from "./providers";
+import { Providers } from "./components/providers";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
