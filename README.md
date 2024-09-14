@@ -10,25 +10,33 @@ Check out the live demo of the project at: [https://social.ofirpatish.com/](http
 
 ```
 app/
-├── dashboard/
-│   ├── EngagementChart.tsx
-│   ├── NotificationsPanel.tsx
-│   ├── RecentPosts.tsx
-│   ├── Stats.tsx
-│   └── UserProfileSummary.tsx
-├── shared/
-│   ├── Layout.tsx
-│   ├── Loader.tsx
-│   ├── Modal.tsx
-│   └── ThemeToggle.tsx
-├── utils/
-│   └── mockData.ts
-├── providers/
-│   └── index.tsx
-├── page.tsx
+├── components/
+│   ├── analytics/
+│   │   ├── EngagementChart.tsx
+│   │   └── Stats.tsx
+│   ├── common/
+│   │   ├── Layout.tsx
+│   │   ├── Loader.tsx
+│   │   ├── Modal.tsx
+│   │   └── ThemeToggle.tsx
+│   ├── notifications/
+│   │   └── NotificationsPanel.tsx
+│   ├── posts/
+│   │   ├── CreatePost.tsx
+│   │   └── RecentPosts.tsx
+│   ├── profile/
+│   │   ├── ProfileEdit.tsx
+│   │   └── UserProfileSummary.tsx
+│   ├── providers/
+│   │   └── index.tsx
+│   └── utils/
+│       └── mockData.ts
+├── fonts/
+│   ├── GeistMonoVF.woff
+│   └── GeistVF.woff
+├── globals.css
 ├── layout.tsx
-└── globals.css
-
+└── page.tsx
 ```
 
 ## Features
